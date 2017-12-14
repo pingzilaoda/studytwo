@@ -12,12 +12,18 @@ Hello,
 {% if current_user.is_authenticated%}
  {{ current_user.username }}
 {% else %}
- Stranger
+
+ {% if  name %}
+{{ name }}
+ {% else %}
+ World
+ {% endif %}
+
 {% endif %}
  {% if not known %}
- <p>Pleased to meet you!</p>
+ <p>Pleased to meet you! You must want to register</p>
  {% else %}
- <p>Happy to see you again!</p>
+ <p>Happy to see you again! You must want to land</p>
  {% endif %}
  {{ wtf.quick_form(form) }}
 </div>
